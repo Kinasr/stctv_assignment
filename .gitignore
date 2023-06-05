@@ -1,0 +1,22 @@
+/.idea
+/src/test/java/demo
+
+# Gradle specific files
+.gradle/
+build/
+
+# IDE specific files
+.idea/
+*.iml
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+log/
+logs/
+
+# Dependency directories
+/bin/
+/build/

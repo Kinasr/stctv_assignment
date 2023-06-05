@@ -1,0 +1,31 @@
+# (*) for mandatory configurations, and ($) for default values
+date-config:
+  date-pattern: "yyyy-MM-dd"
+  time-pattern: "HH:mm:ss"
+  date-time-pattern: "yyyy-MM-dd HH:mm:ss"
+  zoned-date-time-pattern: "yyyy-MM-dd HH:mm:ss Z"
+
+environments:
+  - local
+  - test
+
+
+gui:
+  # (*) chrome, firefox, edge
+  browser: chrome
+  base-url: https://the-internet.herokuapp.com/
+  options:
+    # ture ($), false
+    headless: false
+    # maximized ($) or provide a size like 1920,1080
+    screen-size-at-headless: maximized
+    # normal ($), eager, none
+    page-Loading-strategy: normal
+    # list of optional arguments
+    arguments:
+      - --headless=new
+      - --remote-allow-origins=*
+
+  timeouts:
+    # 30 ($) in seconds
+    page-load-timeout: 30
