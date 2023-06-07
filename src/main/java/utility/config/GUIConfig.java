@@ -18,8 +18,12 @@ public class GUIConfig {
             new ConfigRecord<>("gui.options.page-Loading-strategy");
     private static final ConfigRecord<List<String>> opArguments =
             new ConfigRecord<>("gui.options.arguments");
-    public static final ConfigRecord<Long> tPageLoadTimeout =
+    private static final ConfigRecord<Long> tPageLoadTimeout =
             new ConfigRecord<>("gui.timeouts.page-load-timeout");
+    private static final ConfigRecord<Long> tElementWait =
+            new ConfigRecord<>("gui.timeouts.element-wait");
+    private static final ConfigRecord<Long> tPollingEvery =
+            new ConfigRecord<>("gui.timeouts.polling-every");
 
     private GUIConfig() {
     }
@@ -50,5 +54,13 @@ public class GUIConfig {
 
     public static Optional<Long> pageLoadTimeout() {
         return fetchData(tPageLoadTimeout, key -> configReader().get(key).asLong());
+    }
+
+    public static Optional<Long> elementWait() {
+        return fetchData(tElementWait, key -> configReader().get(key).asLong());
+    }
+
+    public static Optional<Long> pollingEvery() {
+        return fetchData(tPollingEvery, key -> configReader().get(key).asLong());
     }
 }

@@ -28,3 +28,7 @@ gui:
   timeouts:
     # 30 ($) in seconds
     page-load-timeout: 30
+    # 30 ($) in seconds
+    element-wait: 30
+    # 500 ($) in milli seconds
+    polling-every: 500

@@ -1,12 +1,9 @@
 package action.gui;
 
-import action.gui.utility.GUIDriverManager;
+import action.gui.element_action.GUIElementAction;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.FluentWait;
 import utility.exception.ConfigurationException;
-
-import java.time.Duration;
 
 import static action.gui.utility.GUIDriverManager.driver;
 import static utility.config.GUIConfig.baseURL;
@@ -24,6 +21,7 @@ public class GUI {
     }
 
     public static void open(String url) {
+        log.info("Navigating to " + url);
         driver().get(url);
     }
 
