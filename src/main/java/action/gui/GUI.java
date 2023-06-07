@@ -28,4 +28,8 @@ public class GUI {
     public static GUIElementAction element(By by) {
         return new GUIElementAction(driver(), by);
     }
+
+    public static void quit() {
+
+    }
 }

@@ -29,6 +29,11 @@ public class GUIDriverManager {
         return driver;
     }
 
+    public static void quit() {
+        driver.quit();
+        driver = null;
+    }
+
     private WebDriver loadDriver() {
         var browser = GUIConfig.browser().orElseThrow(() -> {
             throw new ConfigurationException("The browser should be provided at the config file");
