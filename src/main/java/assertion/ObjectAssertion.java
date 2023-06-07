@@ -8,8 +8,8 @@ import java.util.Objects;
 import static assertion.helper.AssertionHelper.defineExecutor;
 
 public class ObjectAssertion<T> {
-    private final T actual;
-    private final AssertionExecutor executor;
+    protected final T actual;
+    protected final AssertionExecutor executor;
 
     public ObjectAssertion(T actual) {
         this.actual = actual;
@@ -23,25 +23,33 @@ public class ObjectAssertion<T> {
 
     public AssertionExecutor isNull() {
         return defineExecutor(executor, new AssertionRecord(
-                actual, "Null",
+                actual, null,
                 () -> Objects.isNull(actual),
-                new AssertionMSG(actual, "Null", null)
+                "Null"
         ));
     }
 
     public AssertionExecutor isNotNull() {
         return defineExecutor(executor, new AssertionRecord(
-                actual, "Not Null",
+                actual, null,
                 () -> !Objects.isNull(actual),
-                new AssertionMSG(actual, "Not Null", null)
+                "Not Null"
         ));
     }
 
     public AssertionExecutor isEqualTo(T expected) {
         return defineExecutor(executor, new AssertionRecord(
                 actual, expected,
-                () -> Objects.isNull(actual),
-                new AssertionMSG(actual, expected, "Equal To")
+                () -> Objects.equals(actual, expected),
+                "Equal To"
+        ));
+    }
+
+    public AssertionExecutor isNotEqualTo(T expected) {
+        return defineExecutor(executor, new AssertionRecord(
+                actual, expected,
+                () -> !Objects.equals(actual, expected),
+                "Not Equal To"
         ));
     }
 }

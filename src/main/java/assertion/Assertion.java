@@ -1,5 +1,7 @@
 package assertion;
 
+import org.openqa.selenium.By;
+
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
@@ -11,6 +13,10 @@ public class Assertion {
 
     public static ObjectAssertion<Object> assertThat(Object actual) {
         return new ObjectAssertion<>(actual);
+    }
+
+    public static GUIElementAssertion assertThat(By by) {
+        return new GUIElementAssertion(by);
     }
 
 //    public static BooleanAssertion assertThat(Boolean actual) {

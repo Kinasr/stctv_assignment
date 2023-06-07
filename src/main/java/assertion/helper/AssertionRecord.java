@@ -1,6 +1,5 @@
 package assertion.helper;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -14,17 +13,12 @@ public class AssertionRecord {
     private BooleanSupplier operation;
     private AssertionMSG massage;
     private String userMassage;
-/**public AssertionRecord(Object actual, Object expected, BooleanSupplier operation, String operation) {
+
+    public AssertionRecord(Object actual, Object expected, BooleanSupplier operation, String operationStr) {
         this.actual = actual;
         this.expected = expected;
         this.operation = operation;
-        this.massage = new AssertionMSG(actual, expected, operation);
-    }*/
-    public AssertionRecord(Object actual, Object expected, BooleanSupplier operation, AssertionMSG massage) {
-        this.actual = actual;
-        this.expected = expected;
-        this.operation = operation;
-        this.massage = massage;
+        this.massage = new AssertionMSG(actual, expected, operationStr);
     }
 
     public Boolean test() {
