@@ -1,0 +1,27 @@
+bahrain: &bh BAHRAIN
+ksa: &ksa KSA
+kuwait: &kw KUWAIT
+
+lite:
+  - country: *bh
+    priceAndCurrency: 2 BHD/month
+  - country: *ksa
+    priceAndCurrency: 15 SAR/month
+  - country: *kw
+    priceAndCurrency: 1.2 KWD/month
+
+classic:
+  - country: *bh
+    priceAndCurrency: 3 BHD/month
+  - country: *ksa
+    priceAndCurrency: 25 SAR/month
+  - country: *kw
+    priceAndCurrency: 2.5 KWD/month
+
+premium:
+  - country: *bh
+    priceAndCurrency: 6 BHD/month
+  - country: *ksa
+    priceAndCurrency: 60 SAR/month
+  - country: *kw
+    priceAndCurrency: 4.8 KWD/month

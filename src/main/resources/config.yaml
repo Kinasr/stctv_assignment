@@ -13,12 +13,12 @@ environments:
 gui:
   # (*) chrome, firefox, edge
   browser: chrome
-  base-url: https://the-internet.herokuapp.com/
+  base-url: https://subscribe.stctv.com/sa-en
   options:
     # maximized ($) or provide a size like 1920,1080
     screen-size: maximized
     # ture ($), false
-    headless: false
+    headless: true
     # NORMAL ($), EAGER, NONE
     page-Loading-strategy: NORMAL
     # list of optional arguments
